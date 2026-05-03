@@ -1,0 +1,22 @@
+{
+  "name": "team-task-manager-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack team task manager with authentication, projects, teams, tasks, dashboard, and role-based access.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "start:3099": "node server.js --port 3099"
+  },
+  "keywords": [
+    "task-manager",
+    "full-stack",
+    "rest-api",
+    "rbac"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

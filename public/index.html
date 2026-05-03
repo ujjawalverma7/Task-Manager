@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team Task Manager</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="auth-screen" class="auth-shell">
+      <section class="auth-panel">
+        <div>
+          <p class="eyebrow">Full-stack assignment</p>
+          <h1>Team Task Manager</h1>
+          <p class="muted">Create projects, assign work, and track delivery with admin/member access control.</p>
+        </div>
+
+        <div class="tabs">
+          <button id="login-tab" class="tab active" type="button">Login</button>
+          <button id="signup-tab" class="tab" type="button">Signup</button>
+        </div>
+
+        <form id="auth-form" class="form">
+          <label id="name-field" class="hidden">
+            Name
+            <input id="name" autocomplete="name" />
+          </label>
+          <label>
+            Email
+            <input id="email" type="email" autocomplete="email" value="admin@example.com" required />
+          </label>
+          <label>
+            Password
+            <input id="password" type="password" autocomplete="current-password" value="Admin@123" required />
+          </label>
+          <button class="primary" type="submit">Continue</button>
+          <p class="hint">Seed accounts: admin@example.com / Admin@123 and member@example.com / Member@123</p>
+          <p id="auth-error" class="error"></p>
+        </form>
+      </section>
+    </div>
+
+    <div id="app" class="app hidden">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">TT</span>
+          <div>
+            <strong>Task Manager</strong>
+            <small id="role-pill"></small>
+          </div>
+        </div>
+        <nav>
+          <button class="nav active" data-view="dashboard" type="button">Dashboard</button>
+          <button class="nav" data-view="projects" type="button">Projects</button>
+          <button class="nav" data-view="tasks" type="button">Tasks</button>
+          <button class="nav" data-view="team" type="button">Team</button>
+        </nav>
+        <button id="logout" class="ghost" type="button">Logout</button>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Workspace</p>
+            <h2 id="page-title">Dashboard</h2>
+          </div>
+          <div class="user-chip">
+            <span id="user-name"></span>
+            <small id="user-email"></small>
+          </div>
+        </header>
+
+        <section id="dashboard-view" class="view">
+          <div class="stats-grid" id="stats-grid"></div>
+          <div class="section-head">
+            <h3>Recent Tasks</h3>
+          </div>
+          <div id="recent-tasks" class="task-list"></div>
+        </section>
+
+        <section id="projects-view" class="view hidden">
+          <div class="split">
+            <form id="project-form" class="panel admin-only">
+              <h3>Create Project</h3>
+              <label>
+                Project name
+                <input id="project-name" required />
+              </label>
+              <label>
+                Description
+                <textarea id="project-description" rows="4"></textarea>
+              </label>
+              <label>
+                Team members
+                <select id="project-members" multiple></select>
+              </label>
+              <button class="primary" type="submit">Create project</button>
+            </form>
+            <div id="project-list" class="cards"></div>
+          </div>
+        </section>
+
+        <section id="tasks-view" class="view hidden">
+          <form id="task-form" class="panel admin-only task-form">
+            <h3>Create Task</h3>
+            <label>
+              Project
+              <select id="task-project" required></select>
+            </label>
+            <label>
+              Assignee
+              <select id="task-assignee" required></select>
+            </label>
+            <label>
+              Title
+              <input id="task-title" required />
+            </label>
+            <label>
+              Due date
+              <input id="task-due" type="date" required />
+            </label>
+            <label>
+              Priority
+              <select id="task-priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+            <label class="wide">
+              Description
+              <textarea id="task-description" rows="3"></textarea>
+            </label>
+            <button class="primary" type="submit">Create task</button>
+          </form>
+          <div class="kanban">
+            <div>
+              <h3>To Do</h3>
+              <div id="todo-column" class="task-list"></div>
+            </div>
+            <div>
+              <h3>In Progress</h3>
+              <div id="in-progress-column" class="task-list"></div>
+            </div>
+            <div>
+              <h3>Done</h3>
+              <div id="done-column" class="task-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="team-view" class="view hidden">
+          <div id="team-list" class="cards"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

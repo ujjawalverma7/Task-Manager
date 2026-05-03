@@ -1,0 +1,71 @@
+{
+  "users": [
+    {
+      "id": "usr_395c20c3-8ea5-4f06-a5b4-bb352534e15c",
+      "name": "Admin User",
+      "email": "admin@example.com",
+      "role": "admin",
+      "password": "91ec96e76a60969a2a00b418152f5051:138400d1042cc183d2a6b7d60bdf5b9b540cb9a922801b65f740dc50143aa4e6",
+      "createdAt": "2026-04-30T17:20:03.036Z"
+    },
+    {
+      "id": "usr_d8497c53-15c7-4e19-b687-325ccb66306c",
+      "name": "Member User",
+      "email": "member@example.com",
+      "role": "member",
+      "password": "07ad9cd0d12b54c987d678fa361fb6e1:a40fadf46b09f4c926571a9905b3adf586af887495ab3a3c11a280cd2b2923a9",
+      "createdAt": "2026-04-30T17:20:03.051Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj_e3a84898-6563-4a9e-bc64-4855dfd2b1b2",
+      "name": "Website Launch",
+      "description": "Plan and track the launch tasks for the new product website.",
+      "ownerId": "usr_395c20c3-8ea5-4f06-a5b4-bb352534e15c",
+      "memberIds": [
+        "usr_395c20c3-8ea5-4f06-a5b4-bb352534e15c",
+        "usr_d8497c53-15c7-4e19-b687-325ccb66306c"
+      ],
+      "createdAt": "2026-04-30T17:20:03.051Z"
+    },
+    {
+      "id": "prj_04574535-52a4-493d-8582-ab7cf9766984",
+      "name": "SQL",
+      "description": "",
+      "ownerId": "usr_395c20c3-8ea5-4f06-a5b4-bb352534e15c",
+      "memberIds": [
+        "usr_395c20c3-8ea5-4f06-a5b4-bb352534e15c"
+      ],
+      "createdAt": "2026-04-30T17:21:09.844Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "tsk_242a0af0-5944-47cb-b69d-a6b525bcfb62",
+      "projectId": "prj_e3a84898-6563-4a9e-bc64-4855dfd2b1b2",
+      "title": "Prepare launch checklist",
+      "description": "Collect deployment, QA, analytics, and support readiness items.",
+      "status": "in-progress",
+      "priority": "high",
+      "assignedTo": "usr_d8497c53-15c7-4e19-b687-325ccb66306c",
+      "dueDate": "2026-05-02",
+      "createdBy": "usr_395c20c3-8ea5-4f06-a5b4-bb352534e15c",
+      "createdAt": "2026-04-30T17:20:03.052Z",
+      "updatedAt": "2026-04-30T17:20:03.052Z"
+    },
+    {
+      "id": "tsk_ac6402e2-476a-4a52-92bb-b5bc46194144",
+      "projectId": "prj_e3a84898-6563-4a9e-bc64-4855dfd2b1b2",
+      "title": "Review mobile dashboard",
+      "description": "Check responsive views and fix spacing issues.",
+      "status": "todo",
+      "priority": "medium",
+      "assignedTo": "usr_d8497c53-15c7-4e19-b687-325ccb66306c",
+      "dueDate": "2026-05-05",
+      "createdBy": "usr_395c20c3-8ea5-4f06-a5b4-bb352534e15c",
+      "createdAt": "2026-04-30T17:20:03.052Z",
+      "updatedAt": "2026-04-30T17:20:03.052Z"
+    }
+  ]
+}
